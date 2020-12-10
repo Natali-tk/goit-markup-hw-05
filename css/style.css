@@ -132,7 +132,7 @@ header{
     background-color: var(--accent-btn-color);
     position: absolute;
     left:0;
-    bottom: 0;
+    bottom: -1px;
 }
 .site-nav .link:hover,
 .site-nav .link:focus {
@@ -607,7 +607,39 @@ border-bottom-left-radius: 4px;
     height: auto;
     margin: 0;
 }
+/* Оверлей */
+.card{
+    position: relative;
+}
+.overlay{
+    font-size: 18px;
+    line-height: 1.56;
+    padding: 63px 24px;
+    color:var(--primary-white-color);
+    background-color: rgba(33, 150, 243, 0.9);
+    
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(100%);
+    transition: transform 250ms var(--timing-function),
+                opacity 250ms var(--timing-function);
+}
+.flex-element a:hover .overlay,
+.flex-element a:focus .overlay {
+ transform:translateY(0);
+ opacity: 1;
+ visibility:visible;
+ pointer-events: auto;
+}
 
+
+/* Модальное окно */
 .backdrop{
     position: fixed;
     left:0;
@@ -616,23 +648,24 @@ border-bottom-left-radius: 4px;
     height: 100%;
     background-color:rgba(0,0,0,0.5);
     opacity: 1;
-    transition: opacity 250ms var(--timing-function);
+    transition: opacity 250ms var(--timing-function);            
 }
-.backdrop .is-hidden{
+.backdrop.is-hidden{
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
 }
-.modal{
+.modal {
     position: absolute;
     left:50%;
     top:50%;
-    transform:translate(-50%, -50%) scale(1.1);
+    transform:translate(-50%, -50%) scale(1);
+    transition: transform 250ms var(--timing-function);
     min-width: 400px;
     min-height: 300px;
     padding: 15px;
     background-color:var(--primary-white-color);
 }
-.backdrop .is-hidden  .madal{
+.backdrop.is-hidden .modal {
     transform:translate(-50%, -50%) scale(0.9); 
 }
