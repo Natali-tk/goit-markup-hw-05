@@ -384,7 +384,7 @@ height: 70px;
     color:  #AFB1B8;
     background-color:var(--primary-white-color);
     transition: color 250ms var(--timing-function), 
-                border-color 250ms var(--timing-function);       
+                border 250ms var(--timing-function);       
 }
 .clients-icon.logo-one{
     width: 44.27px;
@@ -422,7 +422,7 @@ height: 70px;
 .clients-links:hover,
 .clients-links:focus {
     color: var(--accent-btn-color);
-    border-color: var(--accent-btn-color) ;
+    border: 1px solid var(--accent-btn-color) ;
 }
 /* Footer */
 footer{
@@ -597,7 +597,9 @@ b{
     margin-bottom: 0;
 }
 .flex-element a{
-    display: block;   
+    display: block;
+    box-shadow: none;
+    transition: box-shadow 250ms var(--timing-function);   
 }
 .card-content {   
 border: 1px solid #EEEEEE;
@@ -628,6 +630,7 @@ border-bottom-left-radius: 4px;
 /* Оверлей */
 .card{
     position: relative;
+    overflow: hidden;
 }
 .overlay{
     font-size: 18px;
