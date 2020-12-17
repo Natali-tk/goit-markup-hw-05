@@ -231,7 +231,7 @@ header{
     bottom:0;
     left:0;
     width: 100%;  
-    z-index: 1;  
+    
 }
 
 /* Секция особенностей */
@@ -672,7 +672,9 @@ border-bottom-left-radius: 4px;
     height: 100%;
     background: rgba(0, 0, 0, 0.2);
     opacity: 1;
-    transition: opacity 250ms var(--timing-function);            
+    transition: opacity 250ms var(--timing-function); 
+    z-index: 2;
+               
 }
 .backdrop.is-hidden{
     visibility: hidden;
@@ -689,7 +691,7 @@ border-bottom-left-radius: 4px;
     min-height: 581px;
     padding: 15px;
     background-color:var(--primary-white-color);
-    z-index: 2;
+    
 }
 .backdrop.is-hidden .modal {
     transform:translate(-50%, -50%) scale(0.9); 
